@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link href="/voronoi-maps/examples/uk-supermarkets/base.css" rel="stylesheet" />
+<link href="/voronoi-maps/isolation/base.css" rel="stylesheet" />
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -10,7 +10,7 @@
   <div id='map'>
   </div>
   <div id='selections' class="selections">
-    <a href='#' class="show">Choose what supermarkets to display</a>
+    <a href='#' class="show">Choose what peaks to display</a>
     <div class='content'>
       <a href='#' class="hide">Hide</a>
       <div id="toggles">
@@ -20,12 +20,12 @@
   <div id='loading'>
   </div>
   <div id='selected'>
-    <h1>Explore supermarkets in the UK</h1>
+    <h1>Explore the 15,000 most isolated peaks in the world</h1>
   </div>
   <div id='about'>
     <a href='#' class="show">About</a>
     <p class='content'>
-      Explore UK supermarkets using a voronoi diagram. Created by <a href="http://chriszetter.com">Chris Zetter</a>, powered by data from <a href="http://www.superlocate.net/">SuperLocate</a>, maps copyright
+      Shows all peaks with 25 miles of isolation using a voronoi diagram. Created by <a href="http://andrewkirmse.com">Andrew Kirmse</a>, maps copyright
       <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox and OpenStreetMap</a>.
       <a href='#' class="hide">Hide</a>
     </div>
@@ -34,12 +34,12 @@
   <script src="https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
   <script src="/voronoi-maps/lib/voronoi_map.js"></script>
   <script>
-    L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
+    L.mapbox.accessToken = 'pk.eyJ1IjoiYWtpcm1zZSIsImEiOiJjaXpqM2xpMnAwM2IyMnFsNDJtNXJ6bTB3In0.5pVtM5cIoJbexMLGEip-ww';
     map = L.mapbox.map('map', 'zetter.i73ka9hn')
-      .fitBounds([[59.355596 , -99.052734], [-49.894634 , 103.515625]]);
+      .fitBounds([[65, -150], [-60, 150]]);
 
-    url = '/voronoi-maps/examples/uk-supermarkets/isotest.csv';
-    initialSelection = d3.set(['Tesco', 'Sainsburys']);
+    url = '/voronoi-maps/isolation/isolation.csv';
+    initialSelection = d3.set(['25mi', '50mi', '100mi']);
     voronoiMap(map, url, initialSelection);
   </script>
 </body>
