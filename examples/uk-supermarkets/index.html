@@ -36,9 +36,9 @@
   <script>
     L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
     map = L.mapbox.map('map', 'zetter.i73ka9hn')
-      .fitBounds([[59.355596 , -9.052734], [49.894634 , 3.515625]]);
+      .fitBounds([[59.355596 , -99.052734], [-49.894634 , 103.515625]]);
 
-    url = '/voronoi-maps/examples/uk-supermarkets/supermarkets.csv';
+    url = '/voronoi-maps/examples/uk-supermarkets/isotest.csv';
     initialSelection = d3.set(['Tesco', 'Sainsburys']);
     voronoiMap(map, url, initialSelection);
   </script>
